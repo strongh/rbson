@@ -9,6 +9,19 @@ type_map = function(key, val){
          NULL      = encode_null_element(key, val))
 }
 
+decode_map = function(raw){
+  switch(as.character(raw),
+         "01" = decode_float_element,
+         "02" = decode_string_element,
+         "07" = decode_objectID_element)
+}
+
+length_map = function(raw){ # should be the first byte
+  switch(as.character(raw[1]), # plus the first 4 bytes after the c_string
+         "01" = 8,
+         "02" = decode_int32(raw[2:5]) + 4, # after
+         "07" = 12)
+}
 
 ########################
 ## document (not the element)
@@ -52,9 +65,12 @@ decode_document = function(raw){
   while(length(raw) > 1){
     element = raw[1] # the bytes representing the element type
     first.null = match(as.raw(0), raw) # signalling the end of the e_name cstring
-    num = decode_float_element(raw[1:(first.null+8)])
+    to.determine.len = c(1, (first.null+1):(first.null+4))
+    len = length_map(raw[to.determine.len]) # get the length of this element
+
+    num = decode_map(element)(raw[1:(first.null+len)])
     doc = append(doc, num)
-    raw = raw[-c(1:(first.null+8))]
+    raw = raw[-c(1:(first.null+len))]
   }
   return(doc)
 }
@@ -235,4 +251,22 @@ decode_float_element = function(raw){
   names(num)[1] = name
   
   num
+}
+
+
+########################
+## float element 
+########################
+
+decode_objectID_element = function(raw){
+  if(raw[1] == as.raw(7))
+    raw = raw[-1]
+  else
+    stop("expected as.raw(7), got ", as.character(raw[1]))
+  first.null = which(raw==as.raw(0))[1]
+  name = decode_cstring(raw[1:first.null])
+  num = rawToNum(raw[(first.null+1):length(raw)], nBytes = 12)
+  names(num)[1] = name
+  
+  num  
 }
