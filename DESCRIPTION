@@ -8,7 +8,7 @@ Maintainer: Homer Strong <homer.strong@gmail.com>
 Description: Provides serializers to and from BSON objects and R lists.
     The primary motivation for using BSON is to communicate with
     MongoDB.
-Imports: pack
+Depends: pack
 License: GPL
 LazyLoad: yes
 Collate: 'cstring.r' 'decode_document.R' 'decode_map.R'
