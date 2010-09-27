@@ -52,4 +52,4 @@ decode_string_element <-
     string = list(decode_string(raw[(first.null+1):length(raw)]))
     names(string)[1] = name
     return(string)
-}
+  }
