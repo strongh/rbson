@@ -49,7 +49,7 @@ decode_document_element <-
 
     first.null = which(raw==as.raw(0))[1]
     name = decode_cstring(raw[1:first.null])
-    doc = list(decode_document(raw[(first.null+1):(length(raw)-4)]))
+    doc = list(decode_document(raw[(first.null+1):(length(raw))]))
 
     doc
   }
