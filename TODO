@@ -2,6 +2,4 @@ TODO
 
 * BSON arrays <-> R vectors
 * Binary data
-* datetime?
 * floating point (encoding)
-* int64
