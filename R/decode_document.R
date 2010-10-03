@@ -33,3 +33,24 @@ decode_document <-
     return(doc)
   }
 
+
+##' Deserialize embedded document
+##'
+##'
+##' @param raw a raw vector
+##' @return a named list whose single element is a list
+
+decode_document_element <-
+  function(raw){
+    if(raw[1] == as.raw(03))
+      raw = raw[-1]
+    else
+      stop("expected raw(03), got ", as.character(raw[1]))
+
+    first.null = which(raw==as.raw(0))[1]
+    name = decode_cstring(raw[1:first.null])
+    doc = list(decode_document(raw[(first.null+1):(length(raw)-4)]))
+
+    doc
+  }
+
