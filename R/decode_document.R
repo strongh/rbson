@@ -22,6 +22,7 @@ decode_document <-
     doc = list()
     while(length(raw) > 1){
       element = raw[1] # the bytes representing the element type
+
       first.null = match(as.raw(0), raw) # signalling the end of the e_name cstring
       to.determine.len = c(1, (first.null+1):(first.null+4))
       len = length_map(raw[to.determine.len]) # get the length of this element

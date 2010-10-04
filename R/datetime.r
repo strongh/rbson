@@ -25,19 +25,19 @@ encode_datetime_element <-
     raw.dt = numToRaw(unclass(datetime)*1000, nBytes = 8)
     raw.name = encode_cstring(name)
     return(c(
-             as.raw(17),
-             raw.dt,
-             raw.num
+             as.raw(09),
+             raw.name,
+             raw.dt
              ))
   }
 
 
 decode_datetime_element <-
   function(raw){
-    if(raw[1] == as.raw(17))
+    if(raw[1] == as.raw(09))
       raw = raw[-1]
     else
-      stop("expected raw(17), got ", as.character(raw[1]))
+      stop("expected raw(09), got ", as.character(raw[1]))
     first.null = which(raw==as.raw(0))[1]
     name = decode_cstring(raw[1:first.null])
     num = list(decode_datetime(raw[(first.null+1):length(raw)]))

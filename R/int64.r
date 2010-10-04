@@ -1,4 +1,4 @@
-##' Functions for BSON int64 type
+o##' Functions for BSON int64 type
 ##'
 ##' The BSON int64 corresponds to the R numeric type.
 ##'
