@@ -11,6 +11,7 @@ Description: Provides serializers to and from BSON objects and R lists.
 Depends: pack
 License: GPL
 LazyLoad: yes
-Collate: 'array.r' 'cstring.r' 'datetime.r' 'decode_document.R'
-    'encode_document_element.R' 'encode_document.R' 'float.r' 'int32.r'
-    'int64.r' 'maps.r' 'null.r' 'objectID.r' 'string.r'
+Collate: 'array.r' 'boolean.r' 'cstring.r' 'datetime.r'
+    'decode_document.R' 'encode_document_element.R' 'encode_document.R'
+    'float.r' 'int32.r' 'int64.r' 'maps.r' 'null.r' 'objectID.r'
+    'string.r'

@@ -13,6 +13,7 @@ length_map <-
            "03" = decode_int32(raw[2:5]), # after
            "04" = decode_int32(raw[2:5]),
            "07" = 12,
+           "08" = 1, 
            "09" = 8,
            "10" = 4,
            "12" = 8,
@@ -34,6 +35,7 @@ decode_map <-
            "03" = decode_document_element,
            "04" = decode_array_element,
            "07" = decode_objectID_element,
+           "08" = decode_logical_element,
            "09" = decode_datetime_element,
            "10" = decode_int32_element,
            "12" = decode_int64_element)
@@ -58,5 +60,6 @@ type_map <-
            integer   = encode_int32_element(key, val),
            list      = encode_document_element(key, val),
            POSIXt    = encode_datetime_element(key, val),
+           logical   = encode_logical_element(key, val),
            NULL      = encode_null_element(key, val))
   }
