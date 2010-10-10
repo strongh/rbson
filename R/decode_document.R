@@ -1,6 +1,7 @@
 ##' Deserialize document
 ##'
 ##'
+##' @export
 ##' @param raw a raw vector
 ##' @return a named list whose single element is a list
 

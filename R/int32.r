@@ -2,15 +2,21 @@
 ##'
 ##' The BSON int32 corresponds to the R numeric type.
 ##'
+##' @export
 ##' @param num a R numeric to convert
-##' @param raw a raw vector to convert
-##' @param name the name of a int32 BSON element
 
 encode_int32 <-
   function(num){
     numToRaw(num, nBytes = 4)
   }
 
+
+##' Functions for BSON int32 type
+##'
+##' The BSON int32 corresponds to the R numeric type.
+##'
+##' @export
+##' @param raw a raw vector to convert
 
 decode_int32 <-
   function(raw){

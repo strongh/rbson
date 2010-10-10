@@ -1,5 +1,4 @@
 TODO
 
-* BSON arrays <-> R vectors
 * Binary data
-* floating point (encoding)
+* encoding floating point

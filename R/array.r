@@ -1,3 +1,9 @@
+##' Deserialize embedded array
+##'
+##'
+##' @param raw a raw vector
+##' @return a named list whose single element is a list
+
 encode_array_element <-
   function(key, List){
     if(length(List) > 0){

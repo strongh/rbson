@@ -1,3 +1,10 @@
+##' Encode a BSON document
+##'
+##' Translates R list into a BSON document
+##'
+##' @export
+##' @param List a list to encode
+
 encode_document <-
   function(List){
     if(length(List) > 0){

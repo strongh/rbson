@@ -2,7 +2,8 @@
 ##'
 ##' Converts between R chars and BSON cstrings.
 ##' cstrings are typically used as e_names.
-##' 
+##'
+##' @export
 ##' @param name a char from the R names, to be used as the BSON e_name
 ##' @param val should be NULL
 ##' @return a raw vector
@@ -17,6 +18,7 @@ encode_cstring <-
 ##'
 ##' The natural R type to the BSON Null value is NULL.
 ##'
+##' @export
 ##' @param raw a raw vector
 ##' @return a named list whose single element is a char
 
