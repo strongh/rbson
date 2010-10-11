@@ -1,0 +1,6 @@
+export(encode_cstring)
+export(decode_cstring)
+export(decode_document)
+export(encode_document)
+export(encode_int32)
+export(decode_int32)
