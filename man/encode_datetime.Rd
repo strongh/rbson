@@ -3,7 +3,7 @@
 \title{Functions for BSON datetime type...}
 \usage{encode_datetime(datetime)}
 \description{Functions for BSON datetime type}
-\details{The BSON datetime is UTC millisecond since the unix epoch. 
+\details{The BSON datetime is UTC milliseconds since the unix epoch. 
 This is conveniently the internal representation of dates in R.}
 \arguments{\item{num}{a R date to convert}
 \item{raw}{a raw vector to convert}

@@ -26,8 +26,8 @@ decode_logical <-
 
 encode_logical_element <-
   function(name, bool){
-    raw.bool = encode_logical(bool)
-    raw.name = encode_cstring(name)
+    raw.bool <- encode_logical(bool)
+    raw.name <- encode_cstring(name)
     return(c(
              as.raw(08),
              raw.name,
@@ -39,13 +39,13 @@ encode_logical_element <-
 decode_logical_element <-
   function(raw){
     if(raw[1] == as.raw(08))
-      raw = raw[-1]
+      raw <- raw[-1]
     else
       stop("expected raw(08), got ", as.character(raw[1]))
-    first.null = which(raw==as.raw(0))[1]
-    name = decode_cstring(raw[1:first.null])
-    num = list(decode_logical(raw[(first.null+1):length(raw)]))
-    names(num)[1] = name
+    first.null <- which(raw==as.raw(0))[1]
+    name <- decode_cstring(raw[1:first.null])
+    num <- list(decode_logical(raw[(first.null+1):length(raw)]))
+    names(num)[1] <- name
     
     num
   }

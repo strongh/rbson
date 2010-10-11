@@ -30,8 +30,8 @@ encode_null_element <-
 
 decode_null_element <-
   function(raw){ # val is NULL  
-    l = list(NULL)
-    names(l)[1] = decode_cstring(raw[-1])
+    l <- list(NULL)
+    names(l)[1] <- decode_cstring(raw[-1])
   
     l
   }

@@ -12,6 +12,6 @@ Depends: pack
 License: GPL
 LazyLoad: yes
 Collate: 'array.r' 'boolean.r' 'cstring.r' 'datetime.r'
-    'decode_document.R' 'encode_document_element.R' 'encode_document.R'
+    'decode_document.r' 'encode_document_element.R' 'encode_document.r'
     'float.r' 'int32.r' 'int64.r' 'maps.r' 'null.r' 'objectID.r'
     'string.r'

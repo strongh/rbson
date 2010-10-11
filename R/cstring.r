@@ -10,7 +10,7 @@
 
 encode_cstring <-
   function(char){
-    rw = charToRaw(char)
+    rw <- charToRaw(char)
     return(c(rw, as.raw(00)))
   }
 
@@ -24,7 +24,7 @@ encode_cstring <-
 
 decode_cstring <-
   function(raw){
-    chars = rawToChar(raw[-length(raw)]) # strip off the trailing null
+    chars <- rawToChar(raw[-length(raw)]) # strip off the trailing null
     return(chars)
   }
 
