@@ -2,3 +2,5 @@ TODO
 
 * Binary data
 * encoding floating point
+* preallocate memory
+* just port everything to C?
