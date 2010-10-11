@@ -1,0 +1,9 @@
+h1. rbson
+
+_an implementation of the BSON spec for R_
+
+BSON, in the words of bsonspec.org, is a
+
+> binary-encoded serialization of JSON-like documents. Like JSON, BSON supports the embedding of documents and arrays with in other documents and arrays. BSON also contains extensions that allow representation of data types that are not part of the JSON spec. For example, BSON has a Date type and a BinData type.
+
+BSON is used by MongoDB to communicate with drivers. The immediate application of rbson is to the mongor package, although it could be used elsewhere.
