@@ -14,7 +14,7 @@ encode_null_element <-
     return(c(
              charToRaw('\n'), # 0a
              encode_cstring(name)
-           ))
+             ))
   }
 
 ##' Deserialize null elements
@@ -32,6 +32,6 @@ decode_null_element <-
   function(raw){ # val is NULL  
     l <- list(NULL)
     names(l)[1] <- decode_cstring(raw[-1])
-  
+    
     l
   }

@@ -15,6 +15,7 @@ length_map <-
            "07" = 12,
            "08" = 1, 
            "09" = 8,
+           "0a" = 0,
            "10" = 4,
            "12" = 8,
            stop("Unsupported BSON element type ", raw[1]))
@@ -37,6 +38,7 @@ decode_map <-
            "07" = decode_objectID_element,
            "08" = decode_logical_element,
            "09" = decode_datetime_element,
+           "0a" = decode_null_element,
            "10" = decode_int32_element,
            "12" = decode_int64_element)
   }
